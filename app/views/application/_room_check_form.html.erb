@@ -1,0 +1,19 @@
+<div class="container">
+  <p>Check Room Avaiblity</p>
+  <form  action="/search/check_availbility" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+
+
+    Start Date<input type="date" name="start_date" required="true" value="<%= @start_date %>">
+    End Date<input type="date" name="end_date" required="true" value="<%= @end_date %>">
+    Room Type
+    <select name="room_type" >
+      <option value="">All</option>
+      <% @room_types.each do |room_type| %>
+        <option value="<%= room_type.id %>"> <%= room_type.name %></option>
+      <% end %>
+    </select>
+    <br>
+    <input type="submit" name="" value="Check  Rooms">
+  </form>
+</div>

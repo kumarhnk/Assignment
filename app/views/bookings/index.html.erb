@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>My Bookings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start Date</th>
+
+      <th>End Date</th>
+
+      <th>Room Number</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.start_date %></td>
+        <td><%= booking.end_date %></td>
+
+        <td><%= booking.room.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
